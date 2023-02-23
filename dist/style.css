@@ -1,13 +1,29 @@
 :root {
-    background-color: gray;
-    font-family: 'Roboto', sans-serif;
+    /* Light mode */
+    --light-nav: #ddd;
+    --light-bg: lightgrey;
+    --light-header: darkslategray;
+    --light-header-text: white;
+    --light-nav-text: black;
+
+    /* Dark mode */
+    --dark-nav: #1e1e1e;
 }
 
 body {
     padding: 0;
     margin: 0;
     border: 0;
+    font-family: 'Roboto', sans-serif;
 }
+
+/* DARK MODE */
+
+.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
 
 button {
     width: 100%;
@@ -23,28 +39,42 @@ i {
     margin-right: 10px;    
 }
 
+/* Header */
+
+.header {
+    background-color: var(--light-header);
+    color: var(--light-header-text);
+}
+
 .logo {
     padding: 10px;
     padding-left: 20px;
     font-family: 'Source Code Pro', monospace;
     display: flex;
-    background-color: darkslategray;
+    background-color: var(--light-header);
     width: 100%;
-    color: white;
 }
 
+
+/* Main */
 
 .main {
-    padding: 0px;
+    background-color: var(--light-bg);
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "navbar input"
+    "navbar content";
+    height: 100vmax;
 }
 
+/* Navbar */
 .navbar {
     padding: 10px;
-    background-color: lightgrey;
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    height: 100vh;
+    background-color: var(--light-nav);
+    grid-area: navbar;
+    color: var(--light-nav-text);
 }
 
 .viewtasks-list {
@@ -62,8 +92,8 @@ i {
 }
 
 .button {
-    background-color: #d3d3d3;
-    color:black;
+    background-color: inherit;
+    color: inherit;
     padding: 12px 24px;
     border-radius: 4px;
     border: none;
