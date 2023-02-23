@@ -8,6 +8,10 @@
 
     /* Dark mode */
     --dark-nav: #1e1e1e;
+    --dark-bg: #0f0f0f;
+    --dark-header: #0f0f0f;
+    --dark-header-text: white;
+    --dark-nav-text: white;
 }
 
 body {
@@ -19,12 +23,58 @@ body {
 
 /* DARK MODE */
 
-.dark-mode {
-    background-color: #1e1e1e;
-    color: white;
+.dark-mode .header {
+    background-color: var(--dark-header);
+    color: var(--dark-header-text);
 }
 
-
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+.theme-switch-wrapper input[type="radio"] {
+    display: none;
+}
+  
+.theme-switch-wrapper label {
+    display: none;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .theme-switch-wrapper label i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
+  
+  .theme-switch-wrapper input[type="radio"]:checked + label {
+    display: block;
+  }
+  
+  .theme-switch-wrapper input[type="radio"]:checked + label i {
+    color: #fff;
+  }
+  
+  .theme-switch-wrapper input[type="radio"]:checked + label:last-of-type {
+    background: #333;
+    border: 2px solid #fff;
+  }
+  
+  .theme-switch-wrapper input[type="radio"]:checked + label:last-of-type i {
+    color: #fff;
+  }
+  
 button {
     width: 100%;
     padding: 10px 20px;
@@ -44,6 +94,8 @@ i {
 .header {
     background-color: var(--light-header);
     color: var(--light-header-text);
+    display: flex;
+    justify-content: space-between;
 }
 
 .logo {
