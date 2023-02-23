@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="main.js"></script>
+    <title>Todo List</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="logo">
+            <h1>Todo - Start</h1>
+        </div>
+    </header>
+    <main class="main">
+        <nav class="navbar">
+            <div class="viewtasks-list">
+                <button class="btn-task-list" id="btn-inbox">Inbox</button>
+                <button class="btn-task-list" id="btn-today">Today</button>
+                <button class="btn-task-list" id="btn-week">This week</button>
+            </div>
+            <h1 class="projects-title">Projects</h1>
+            <div class="projects-list">
+                <!-- test -->
+                <button id="project1" class="project">Test project -- Start!!!</button>
+                <button id="project2" class="project">T2 - In motion</button>
+            </div>
+        </nav>
+    </main>
+    <footer class="footer"></footer>
 </body>
 </html>
