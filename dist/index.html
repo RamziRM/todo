@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/177d0f9933.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
@@ -20,15 +21,30 @@
     <main class="main">
         <nav class="navbar">
             <div class="viewtasks-list">
-                <button class="btn-task-list" id="btn-inbox">Inbox</button>
-                <button class="btn-task-list" id="btn-today">Today</button>
-                <button class="btn-task-list" id="btn-week">This week</button>
+                <button class="btn-task-list button" id="btn-inbox">
+                    <i class="fa-solid fa-inbox"></i>
+                    Inbox
+                </button>
+                <button class="btn-task-list button" id="btn-today">
+                    <i class="fa-solid fa-calendar-day"></i>
+                    Today
+                </button>
+                <button class="btn-task-list button" id="btn-week">
+                    <i class="fa-solid fa-calendar-week"></i>
+                    This week
+                </button>
             </div>
             <h1 class="projects-title">Projects</h1>
             <div class="projects-list">
                 <!-- test -->
-                <button id="project1" class="project">Test project -- Start!!!</button>
-                <button id="project2" class="project">T2 - In motion</button>
+                <button id="project1" class="project button">
+                    <i class="fa-solid fa-bars-progress"></i>
+                    Test project - Start!
+                </button>
+                <button id="project2" class="project button">
+                    <i class="fa-solid fa-bars-progress"></i>
+                    T2 - In motion
+                </button>
             </div>
         </nav>
     </main>
