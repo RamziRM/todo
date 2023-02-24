@@ -27,53 +27,43 @@ body {
     background-color: var(--dark-header);
     color: var(--dark-header-text);
 }
-
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
   }
- 
-.theme-switch-wrapper input[type="radio"] {
-    display: none;
-}
   
-.theme-switch-wrapper label {
+  .theme-switch-wrapper label {
+    margin: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .theme-switch-wrapper input[type="radio"] {
     display: none;
-    width: 40px;
-    height: 40px;
+  }
+  
+  .theme-switch-wrapper input[type="radio"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
     margin-right: 10px;
     border-radius: 50%;
-    background: #ccc;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    border: 2px solid #ccc;
   }
   
-  .theme-switch-wrapper label i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
+  .theme-switch-wrapper input[type="radio"]:checked + label:before {
+    border-color: #222;
   }
   
-  .theme-switch-wrapper input[type="radio"]:checked + label {
-    display: block;
+  .theme-switch-wrapper .fa-sun {
+    color: #FDB813;
   }
   
-  .theme-switch-wrapper input[type="radio"]:checked + label i {
-    color: #fff;
+  .theme-switch-wrapper .fa-moon {
+    color: #A8A8A8;
   }
   
-  .theme-switch-wrapper input[type="radio"]:checked + label:last-of-type {
-    background: #333;
-    border: 2px solid #fff;
-  }
-  
-  .theme-switch-wrapper input[type="radio"]:checked + label:last-of-type i {
-    color: #fff;
-  }
   
 button {
     width: 100%;
