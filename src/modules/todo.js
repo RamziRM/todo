@@ -1,4 +1,4 @@
-export default function createTodo(name, dueDate = 'No date', description = '') {
+function createTodo(name, dueDate = 'No date') {
     return {
         name,
         dueDate,
@@ -9,9 +9,6 @@ export default function createTodo(name, dueDate = 'No date', description = '') 
         },
         setDueDate(dueDate) {
             this.dueDate = dueDate;
-        },
-        setDescription(description) {
-            this.description = description;
         },
         getDueDate() {
             return this.dueDate;
@@ -27,3 +24,5 @@ export default function createTodo(name, dueDate = 'No date', description = '') 
         }
     }
 }
+
+export { createTodo };
