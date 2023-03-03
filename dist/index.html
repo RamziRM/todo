@@ -46,17 +46,21 @@
                     This week
                 </button>
             </div>
-            <h1 class="projects-title">Projects</h1>
-            <div class="projects-list">
-                <!-- test -->
-                <button id="project1" class="project button">
-                    <i class="fa-solid fa-bars-progress"></i>
-                    Test project - Start!
-                </button>
-                <button id="project2" class="project button">
-                    <i class="fa-solid fa-bars-progress"></i>
-                    T2 - In motion
-                </button>
+            <div class="projects">
+                <h1 class="projects-title">Projects</h1>
+                <form id="projectForm" class="hidden" autocomplete="off">
+                    <div class="projectIcon">
+                        <span class="material-icons-round">menu</span>
+                    </div>
+                    <div class="inputField">
+                        <input type="text" id="projectInput" placeholder="Enter Project Name" maxlength="24">
+                        <div class="formButtons">
+                            <input type="submit" id="projectSubmitBtn" value="Add">
+                            <input type="button" id="projectCancelBtn" value="Cancel">
+                        </div>
+                    </div>
+                </form>
+                <button id="addProject"><span class="material-icons-round">Add Project</button>
             </div>
         </nav>
         <div class="content" id="main-content">
