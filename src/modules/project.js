@@ -91,6 +91,27 @@ const addProject = (todoProject, projectName) => {
   projectDiv.textContent = projectName;
 
   project.insertBefore(projectDiv, form);
+
+  // project icon
+  const projectIcon = document.createElement('i');
+  projectIcon.classList.add('fas', 'fa-tasks', 'projectIcon');
+  projectDiv.appendChild(projectIcon);
+
+  // project delete icon
+  const projectDelete = document.createElement('i');
+  projectDelete.classList.add('fas', 'fa-trash-alt', 'projectDelete');
+  projectDiv.appendChild(projectDelete);
+
+  // project name edit by clicking on project name
+  projectDiv.addEventListener('click', (e) => {
+    editProjectName(e);
+  });
+
+  // project delete by clicking on delete icon
+  projectDelete.addEventListener('click', (e) => {
+    deleteProject(e);
+  });
+
 }
 
 // check if project is clicked
@@ -101,6 +122,60 @@ const checkProject = (e) => {
     let todoList = document.querySelector('.todoList');
     todoList.innerHTML = "";
     displayTodoList(projectData);
+
+    selectedProject(projectData);
   }
 }
 
+// find next dataset for project
+const findNextDataset = () => {
+  let dataProject = 0;
+  if (projectList.length > 0) {
+    dataProject = projectList[projectList.length - 1].todoProject + 1;
+  }
+  return dataProject;
+}
+
+// edit project name
+const editProjectName = (e) => {
+  let project = e.target;
+  let projectData = project.getAttribute('data-project');
+  let projectIndex = projectList.findIndex((project) => project.todoProject == projectData);
+  let projectName = projectList[projectIndex].name;
+  let newProjectName = prompt("Edit Project Name", projectName);
+  if (newProjectName != null) {
+    projectList[projectIndex].name = newProjectName;
+    saveToLocalStorage();
+    project.textContent = newProjectName;
+  }
+}
+
+// delete project
+const deleteProject = (e) => {
+  let project = e.target.parentElement;
+  let projectData = project.getAttribute('data-project');
+  let projectIndex = projectList.findIndex((project) => project.todoProject == projectData);
+  projectList.splice(projectIndex, 1);
+  saveToLocalStorage();
+  project.remove();
+}
+
+// save projectList and last id data on local storage
+const saveToLocalStorage = () => {
+  localStorage.setItem("myProjectList", JSON.stringify(projectList));
+}
+
+// add .selected to selected project and remove from others
+const selectedProject = (projectData) => {
+  let project = document.querySelector(`[data-project="${projectData}"]`);
+  project.classList.add('selected');
+  let projectList = document.querySelectorAll('.project');
+  projectList.forEach((project) => {
+    if (project.getAttribute('data-project') != projectData) {
+      project.classList.remove('selected');
+    }
+  });
+}
+
+// export functions
+export { addProjectEventList, displayProjectList, saveToLocalStorage, projectList };
