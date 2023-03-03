@@ -5,13 +5,6 @@
     --light-header: darkslategray;
     --light-header-text: white;
     --light-nav-text: black;
-
-    /* Dark mode */
-    --dark-nav: #1e1e1e;
-    --dark-bg: #0f0f0f;
-    --dark-header: #0f0f0f;
-    --dark-header-text: white;
-    --dark-nav-text: white;
 }
 
 html{
@@ -30,7 +23,14 @@ body {
 }
 
 /* DARK MODE */
-  
+body.dark {
+    --light-nav: #1e1e1e;
+    --light-bg: #0f0f0f;
+    --light-header: darkslategray;
+    --light-header-text: white;
+    --light-nav-text: white;
+}
+
 button {
     width: 100%;
     padding: 10px 20px;
@@ -104,7 +104,7 @@ i {
   user-select: none;
 }
 .label {
-  background-color: var(--bgColor1);
+  background-color: var(--light-header);
   display: flex;
   align-items: center;
   justify-content: space-between;
