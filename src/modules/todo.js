@@ -1,9 +1,9 @@
 // import
 
-// factory function
-const CreateTodo = (dataProject, id, todo, completed, date) => {
+// CreateTodo factory function
+const CreateTodo = (todoProject, id, todo, completed, date) => {
     return {
-        dataProject,
+        todoProject,
         id,
         todo,
         completed: completed,
@@ -64,4 +64,5 @@ const processTodoInput = (e) => {
 
     // create new todo object and add to todo array -- with processed inputs
     const newTodo = CreateTodo(todoProject, todoId, todo, false, date);
+
 }
