@@ -14,6 +14,14 @@
     --dark-nav-text: white;
 }
 
+html{
+  width: 100%;
+  height:100%;
+  margin:0;
+  padding: 0;
+  
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -43,16 +51,17 @@ i {
     background-color: var(--light-header);
     color: var(--light-header-text);
     display: flex;
+    padding: 10px 20px;
     justify-content: space-between;
+    align-items: center;
 }
 
 .sidebar-toggle {
-  display: none;
   background: none;
   border: none;
   font-size: 24px;
-  color: #333;
   cursor: pointer;
+  justify-content: center;
 }
 
 .sidebar-toggle i {
@@ -80,23 +89,70 @@ i {
     display: flex;
     background-color: var(--light-header);
     width: 100%;
-}
-
-.h-container {
-    display: flex;
-    flex-direction: column;
+    grid-area: logo;
     align-items: center;
+    justify-content: center;
 }
 
-#todo-form {
+.logo h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.theme {
+  margin-right:0px;
+  user-select: none;
+}
+.label {
+  background-color: var(--bgColor1);
   display: flex;
-  padding-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding:10px;
+  border-radius: 50px;
+  height:40px;
+  width: 80px;
+  box-sizing: border-box;
+  position: relative;
+  transform:scale(0.8);
+  transition: background-color 0.2s ease-in;
+  border: solid 2px white;
+  cursor: pointer;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+#sun {
+  color: darkgoldenrod;
+  transform: scale(1.3);
+  width:24.7px;
+}
+#moon {
+  color:darkblue;
+  transform: scale(1.3);
+}
+.ball {
+  position: absolute;
+  width:25px;
+  height:25px;
+  left: 3px;
+  background-color: var(--light-header);
+  border:solid 2px white;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
 }
 
-form > input {
-    background-color: gainsboro;
-
+/* plus meaning target the node after it */
+.checkbox:checked + .label .ball{            
+  transform: translate(37px);
+  background-color: var(--light-header);
+  border:solid 2px white;
 }
+.checkbox:checked + label{
+  background-color: var(--light-header);
+}
+
 
 /* Main */
 
@@ -123,6 +179,10 @@ form > input {
 }
 
 /* Navbar */
+.sidebar-toggle {
+  color: white;
+}
+
 .navbar {
     padding: 10px;
     background-color: var(--light-nav);
@@ -137,6 +197,7 @@ form > input {
 
 .projects-title {
     padding-left: 20px;
+
 }
 
 .projects-list {

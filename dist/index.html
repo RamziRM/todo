@@ -19,12 +19,14 @@
           </button>          
         <div class="h-container logo">
             <h1>Todo Start</h1>
-            <form action="" id="todo-form" class="">
-                <input type="text" id="todo-input" placeholder="Add a new todo" autofocus>
-                <button type="submit" id="todo-button" class="btn-add">
-                    <i class="fas fa-plus"></i>
-                </button>
-            </form>
+        </div>
+        <div class="theme">
+            <input type="checkbox" class="checkbox" id="checkbox" checked = "true">
+            <label for="checkbox" class="label">
+                <i class="fa-solid fa-sun" id="sun"></i>
+                <i class="fa-solid fa-moon" id="moon"></i>
+                <div class="ball"></div>
+            </label>
         </div>
     </header>
     <main class="main">
@@ -58,7 +60,18 @@
             </div>
         </nav>
         <div class="content" id="main-content">
-
+            <form id="todoForm" class="hidden" autocomplete="off">
+                <div class="inputField">
+                    <input type="text" id="todoInput" placeholder="Create Todo">
+                    <label>Due date:</label>
+                    <input type="date" id="todoInputDate" >
+                    <div class="formButtons">
+                        <input type="submit" class="todoSubmitBtn" value="Add">
+                        <input type="button" class="todoCancelBtn" value="Cancel">
+                    </div>
+                </div>
+            </form>
+            <button id="addTodo"><span class="material-icons-round">Add Todo</button>
         </div>
     </main>
     <footer class="footer"></footer>
