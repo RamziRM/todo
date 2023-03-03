@@ -1,3 +1,4 @@
+import { displayTodoList, id } from "./todo.js";
 
 // CreateProject Factory
 const CreateProject = (todoProject, name) => {
@@ -163,6 +164,7 @@ const deleteProject = (e) => {
 // save projectList and last id data on local storage
 const saveToLocalStorage = () => {
   localStorage.setItem("myProjectList", JSON.stringify(projectList));
+  localStorage.setItem("myId", JSON.stringify(id));
 }
 
 // add .selected to selected project and remove from others
@@ -177,5 +179,17 @@ const selectedProject = (projectData) => {
   });
 }
 
+// show addtodo form when project is selected
+const showAddTodoForm = () => {
+  const addTaskBtn = document.getElementById('addTodo');
+  addTaskBtn.classList.remove('hidden');
+}
+
+// hide addtodo form when project is not selected
+const hideAddTodoForm = () => {
+  const addTaskBtn = document.getElementById('addTodo');
+  addTaskBtn.classList.add('hidden');
+}
+
 // export functions
-export { addProjectEventList, displayProjectList, saveToLocalStorage, projectList };
+export { addProjectEventList, displayProjectList, saveToLocalStorage, projectList, showAddTodoForm, hideAddTodoForm };
