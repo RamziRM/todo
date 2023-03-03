@@ -1,28 +1,12 @@
-export default function createProject(name, description = '', tasks = []) {
+
+// CreateProject Factory
+const CreateProject = (todoProject, name) => {
+  const todoList = [];
+  const taskNum = todoList.length;
   return {
+    todoProject,
     name,
-    description,
-    tasks,
-    setName(name) {
-      this.name = name;
-    },
-    setDescription(description) {
-        this.description = description;
-    },
-    getName() {
-      return this.name;
-    },
-    getDescription() {
-      return this.description;
-    },
-    getTasks() {
-      return this.tasks;
-    },
-    addTask(task) {
-      this.tasks.push(task);
-    },
-    removeTask(task) {
-      this.tasks = this.tasks.filter((t) => t !== task);
-    }
-  };
+    todoList,
+    taskNum
+  }
 }
