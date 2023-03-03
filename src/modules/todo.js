@@ -51,6 +51,10 @@ const hideTodoForm = () => {
     document.querySelector("#todoInputDate").value = "";
 }
 
+//get id from local storage or get a default one
+let defaultId = 0;
+let id = Number(localStorage.getItem("myId")) || defaultId;
+
 // process todo input
 const processTodoInput = (e) => {
     e.preventDefault();
@@ -114,4 +118,4 @@ const findCurrentProject = () => {
     return currentProject.dataset.project;
 }
 
-export { addEventList, processTodoInput, idGenerator, findCurrentProject, CreateTodo, displayTodoList, processDate, showTodoForm, hideTodoForm}
+export { addEventList, displayTodoList, id, addTodo, processDate, processTodoInput }
