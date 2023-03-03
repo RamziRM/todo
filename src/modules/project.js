@@ -91,5 +91,16 @@ const addProject = (todoProject, projectName) => {
   projectDiv.textContent = projectName;
 
   project.insertBefore(projectDiv, form);
+}
+
+// check if project is clicked
+const checkProject = (e) => {
+  if (e.target.classList.contains('project')) {
+    let project = e.target;
+    let projectData = project.getAttribute('data-project');
+    let todoList = document.querySelector('.todoList');
+    todoList.innerHTML = "";
+    displayTodoList(projectData);
   }
-  
+}
+
