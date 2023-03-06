@@ -12,8 +12,13 @@ addEventList();
 displayAllTodos();
 
 // hide navbar event listener
-const hideNavbar =  document.querySelector('.hiddenNavbar');
-hideNavbar.addEventListener('click', () => {
+// what is wrong with this? 
+// answer: the event listener is added before the element is created
+// so the event listener is added to null
+// fix: add the event listener after the element is created
+// solution: add the event listener in the module that creates the element
+const navbarBtn =  document.querySelector('.sidebar-toggle');
+navbarBtn.addEventListener('click', () => {
     const navbar = document.querySelector('.navbar');
     navbar.classList.toggle('hidden');
 });

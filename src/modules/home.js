@@ -12,6 +12,7 @@ const clearContent = () => {
 // display all todos
 const displayAllTodos = () => {
     clearContent();
+    checkNoTodos();
     projectList.forEach((project) => {
         project.todoList.forEach((todo) => {
             addTodo(todo.todo, todo.description, todo.dueDate, todo.priority, todo.todoProject, todo.todoId);
@@ -34,6 +35,8 @@ const displayToday = () => {
 // display todos for this next week
 const displayNextWeek = () => {
     clearContent();
+    // Cant clear content of null element, so check if there are any todos
+    checkNoTodos();
     projectList.forEach((project) => {
         project.todoList.forEach((todo) => {
             if (isWithinInterval(parseISO(todo.dueDate), { start: new Date(), end: addDays(new Date(), 7) })) {
