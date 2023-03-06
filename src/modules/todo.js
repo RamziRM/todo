@@ -25,7 +25,7 @@ function addEventList() {
     });
 
     const submitTodo = document.querySelector("#todoSubmitBtn");
-    submitTodo.addEventListener("submit", processTodoInput);
+    submitTodo.addEventListener("click", processTodoInput);
     submitTodo.addEventListener("keyup", (e) => {
         if (e.key === "Enter") {
             processTodoInput(e);

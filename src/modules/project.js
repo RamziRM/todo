@@ -26,7 +26,7 @@ const addProjectEventList = () => {
   });
 
   const submitProject = document.querySelector("#projectSubmitBtn");
-  submitProject.addEventListener("submit", processProjectInput);
+  submitProject.addEventListener("click", processProjectInput);
   submitProject.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
       processProjectInput(e);
