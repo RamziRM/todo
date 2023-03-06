@@ -63,7 +63,7 @@ const processTodoInput = (e) => {
     let dateInput = document.querySelector("#todoInputDate").value;
 
     let todoProject =  findCurrentProject();
-    let date = processDate(dateInput);
+    let date = document.querySelector("#todoInputDate").value;
     let todoId = id;
 
     // create new todo object and add to todo array -- with processed inputs
@@ -76,18 +76,6 @@ const processTodoInput = (e) => {
     addTodo(todoProject, todoId, todo, false, date);
     hideTodoForm();
     e.preventDefault();
-}
-
-// process date input and set due date if not set
-const processDate = (date) => {
-    let formattedDate;
-    if (date === "") {
-        formattedDate = "No due date";
-    }
-    else {
-        formattedDate = date;
-    }
-    return formattedDate;
 }
 
 // display all todos in project
@@ -104,9 +92,25 @@ const addTodo = (todoProject, todoId, todo, completed, date) => {
     const ul = document.querySelector("ul");
     const li = document.createElement("li");
     li.id = todoId;
-    ul.appendChild(li);
+    
+    // add todo details to list item element
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = completed;
+    checkbox.addEventListener("click", toggleTodoCompletion);
+    li.appendChild(checkbox);
 
+    const todoText = document.createElement("span");
+    todoText.innerText = todo;
+    li.appendChild(todoText);
+
+    const todoDate = document.createElement("span");
+    todoDate.innerText = date;
+    li.appendChild(todoDate);
+
+    ul.appendChild(li);
 }
+
 
 // find current project that is displayed
 const findCurrentProject = () => {
@@ -115,4 +119,4 @@ const findCurrentProject = () => {
     return todoProjectName;
 }
 
-export { addEventList, displayTodoList, id, addTodo, processDate, processTodoInput }
+export { addEventList, displayTodoList, id, addTodo, processTodoInput }

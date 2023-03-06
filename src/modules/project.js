@@ -2,13 +2,10 @@ import { displayTodoList, id } from "./todo.js";
 
 // CreateProject Factory
 const CreateProject = (todoProject, name) => {
-  const todoList = [];
-  const taskNum = todoList.length;
   return {
     todoProject,
     name,
-    todoList,
-    taskNum
+    todoList: []
   }
 }
 
@@ -38,9 +35,10 @@ const addProjectEventList = () => {
 }
 
 //get project list of objects from local storage or start with empty
-let defaultProjectList=[];
-let projectList = localStorage.getItem("myProjectList");
-    projectList = JSON.parse(projectList || JSON.stringify(defaultProjectList));
+let defaultProjectList = [{ projectName: 'Default', todoList: [] }];
+let projectList = JSON.parse(localStorage.getItem('myProjectList')) || defaultProjectList;
+
+
 
 //process the input and prepare to create element project
 const processProjectInput = (e) => {
