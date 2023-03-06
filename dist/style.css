@@ -176,7 +176,7 @@ i {
   }
 }
 
-.navbar.hidden {
+#navbarWrapper.hidden {
   display: none;
 }
 

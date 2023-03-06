@@ -19,16 +19,17 @@ displayAllTodos();
 // solution: add the event listener in the module that creates the element
 const navbarBtn =  document.querySelector('.sidebar-toggle');
 navbarBtn.addEventListener('click', () => {
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.getElementById('navbarWrapper');
     navbar.classList.toggle('hidden');
 });
 
 // on start check if light or dark mode
 const checkbox = document.getElementById('checkbox');
+const body = document.getElementById('body');
 if (checkbox.checked === checked) {
-    document.body.classList.add('dark');
+    body.classList.add('dark');
 } else {
-    document.body.classList.remove('dark');
+    body.classList.remove('dark');
 }
 
 // event listener for light/dark mode
