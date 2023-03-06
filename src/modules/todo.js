@@ -106,16 +106,13 @@ const addTodo = (todoProject, todoId, todo, completed, date) => {
     li.id = todoId;
     ul.appendChild(li);
 
-    const div = document.createElement("div");
-    div.classList.add("todo");
-    li.appendChild(div);
-
 }
 
-// find current project
+// find current project that is displayed
 const findCurrentProject = () => {
-    let currentProject = document.querySelector(".currentProject");
-    return currentProject.dataset.project;
+    let currentProject = document.getElementById("projectInput").textContent;
+    let todoProjectName = projectList.findIndex((project) => project.projectName === currentProject);
+    return todoProjectName;
 }
 
 export { addEventList, displayTodoList, id, addTodo, processDate, processTodoInput }
