@@ -26,7 +26,7 @@ navbarBtn.addEventListener('click', () => {
 // on start check if light or dark mode
 const checkbox = document.getElementById('checkbox');
 const body = document.getElementById('body');
-if (checkbox.checked === checked) {
+if (checkbox.checked === "checked") {
     body.classList.add('dark');
 } else {
     body.classList.remove('dark');
