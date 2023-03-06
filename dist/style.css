@@ -8,18 +8,19 @@
 }
 
 html{
-  width: 100%;
-  height:100%;
+
   margin:0;
   padding: 0;
   
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  height:100vh;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* DARK MODE */
@@ -74,14 +75,11 @@ i {
   justify-content: center;
 }
 
-/* @media (max-width: 767px) {
+@media (min-width: 768px) {
   .navbar {
-    display: none;
-  } 
-  .sidebar-toggle {
     display: block;
-  }
-} */
+  } 
+}
 
 .logo {
     padding: 10px;
@@ -165,10 +163,10 @@ i {
     grid-template-areas: 
     "navbar head"
     "navbar content";
-    height: 100vh;
+    height: 100%;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .main {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto;
@@ -176,7 +174,7 @@ i {
       "head"
       "content";
   }
-}
+} */
 
 #navbarWrapper.hidden {
   display: none;
@@ -188,39 +186,40 @@ i {
 }
 
 .navbar {
-    padding: 10px;
-    background-color: var(--light-nav);
-    grid-area: navbar;
-    color: var(--light-nav-text);
+  padding: 10px;
+  background-color: var(--light-nav);
+  grid-area: navbar;
+  color: var(--light-nav-text);
+  height: 100%;
 }
 
 .viewtasks-list {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .projects-title {
-    padding-left: 20px;
+  padding-left: 20px;
 
 }
 
 .projects-list {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .button {
-    background-color: inherit;
-    color: inherit;
-    padding: 12px 24px;
-    border-radius: 4px;
-    border: none;
-    transition: background-color 0.3s ease-out;
+  background-color: inherit;
+  color: inherit;
+  padding: 12px 24px;
+  border-radius: 4px;
+  border: none;
+  transition: background-color 0.3s ease-out;
   }
   
 .button:hover,
 .button:active {
-    background-color: #a9a9a9;
+  background-color: #a9a9a9;
 }
   
 
