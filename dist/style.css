@@ -25,8 +25,8 @@ body {
 
 /* DARK MODE */
 body.dark {
-    --light-nav: #1e1e1e;
-    --light-bg: #0f0f0f;
+    --light-nav: #1f1f2a95;
+    --light-bg: #2a2830;
     --light-header: darkslategray;
     --light-header-text: white;
     --light-nav-text: white;
